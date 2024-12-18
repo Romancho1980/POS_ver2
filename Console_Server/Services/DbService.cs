@@ -10,6 +10,8 @@ using System.Xml.Linq;
 
 namespace Console_Server.Services
 {
+    // Класс для взаимодействия в БД.
+    // 
     internal class DbService
     {
         /// <summary>
@@ -30,10 +32,12 @@ namespace Console_Server.Services
         }
 
         // Добавление нового клиента
+        // Не реализована проверка на корректность ввода данных от пользователя :(
         public void AddNewClient()
         {
             Console.WriteLine("***** Внесите данные о клиенте *****");
-            var new_client=new SimpleClientAccount();
+
+            var new_client=new SimpleClientAccount(); // создание экземпляра класса клиент
 
             Console.WriteLine("Введите имя");
             var client_name = Console.ReadLine();
@@ -58,14 +62,17 @@ namespace Console_Server.Services
             Console.WriteLine("************************");
             Console.WriteLine("**Сохрание данных в БД**");
 
-            // добавляю поля, которые не заполнены, чтобы не выбрасывало исключение :)
+            // А так как не все поля из класса заполнены (нет желания), то 
+            // заполняю поля значениями по умолчанию, чтобы не выбрасывало исключение :)
             // Потому что по умолчанию значения этих полей установлены в значение null
             new_client.Description = "";
             new_client.Birthday = DateTime.Now;
             new_client.City = "Новгород";
             new_client.Passport = "";
+
             // Вызываю метод Add - добавить, для добавления строки (пареметр new_client) в БД. 
             _dbContext.Clients.Add(new_client);
+
             // Сохранить изменения в БД
             _dbContext.SaveChanges();
         }

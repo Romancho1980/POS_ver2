@@ -156,6 +156,7 @@ namespace Console_Server
                         string to_account = ""; // номер счёта, получатель денег. Не реализован пока
 
                         Console.WriteLine("Нажата 9");
+
                         Console.WriteLine("*********");
                         Console.WriteLine("Введите номер счёта с которого делаем перевод");
                         from_account = Console.ReadLine();
