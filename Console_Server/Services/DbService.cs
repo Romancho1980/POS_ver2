@@ -72,9 +72,18 @@ namespace Console_Server.Services
 
             // Вызываю метод Add - добавить, для добавления строки (пареметр new_client) в БД. 
             _dbContext.Clients.Add(new_client);
+            try
+            {
+                _dbContext.SaveChanges();
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine("Error");
+//                Console.WriteLine(ex.ToString()); 
+                return;
+            }
 
             // Сохранить изменения в БД
-            _dbContext.SaveChanges();
         }
 
         // Этот метод использовался в качестве автоматического добавления

@@ -26,6 +26,7 @@ namespace Console_Server
         static void Main(string[] args)
         {
             ShowMenu();
+
             ApplicationContext db = new ApplicationContext(); // EntityFrameWork - окрываем БД
             DbService dbService = new DbService(db); // Наши сервисы, для работы с БД
 
@@ -33,6 +34,7 @@ namespace Console_Server
             {
                 string client_account;
                 int id;
+             //   Console.WriteLine("Выберете команду....");
                 var key = Console.ReadKey();
                 decimal balance;
                 string name;
