@@ -20,29 +20,30 @@ namespace Domain.Services
             accounts.Add(new ClientAccountVer1()
             {
                 Id = 1,
-                Name = "Roman",
-                Surname="Shcherbakow",
+                Name = "Isaak",
+                Surname="Newton",
                 INN="66546497732132",
                 City="Новгород",
                 Passport="54658744654",
                 Birthday=DateTime.Now,
                 Account="2204 2567 5444 3144",
                 Balance=1550M,
-                Description="RiP was Here"
+                Description="No data ...."
+
             });
 
             accounts.Add(new ClientAccountVer1()
             {
                 Id = 1,
-                Name = "Nikita",
-                Surname = "Shcherbakow",
+                Name = "Karl",
+                Surname = "Chapek",
                 INN = "77441321446542",
                 City = "Спб",
                 Passport = "65647987984",
                 Birthday = DateTime.Now,
                 Account = "8999 3217 4773 1247",
                 Balance = 15.10M,
-                Description = "RiP was Here"
+                Description = "No data"
             });
 
             accounts.Add(new ClientAccountVer1()
@@ -56,7 +57,7 @@ namespace Domain.Services
                 Birthday = DateTime.Now,
                 Account = "9512 6547 1274 6571",
                 Balance = 45.51M,
-                Description = "RiP was Here"
+                Description = "No data"
             });
 
             accounts.Add(new ClientAccountVer1()
@@ -70,7 +71,7 @@ namespace Domain.Services
                 Birthday = DateTime.Now,
                 Account = "8794 5412 6598 3284",
                 Balance = 15505840M,
-                Description = "RiP was Here"
+                Description = "No data"
             });
 
             accounts.Add(new ClientAccountVer1()
@@ -84,7 +85,7 @@ namespace Domain.Services
                 Birthday = DateTime.Now,
                 Account = "2205 5848 6312 8951",
                 Balance = 10551.97M,
-                Description = "RiP was Here"
+                Description = "No data"
             });
         }
 
