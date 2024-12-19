@@ -47,7 +47,7 @@ namespace UI_Serial_Port_Server
             timer1.Start();
             foreach (var items in dataBase.accounts)
             {
-                listBox1.Items.Add(items.Account);
+                listBox1.Items.Add(items.Name+" "+items.Surname);
             }
 
         }
