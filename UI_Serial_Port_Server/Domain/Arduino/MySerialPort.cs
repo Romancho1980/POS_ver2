@@ -1,23 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.Services;
+using System.Windows.Forms;
 
-namespace Domain.Arduino
+namespace UI_Serial_Port_Server.Domain.Arduino
 {
-    public class MySerialPort:SerialPort
+    public class MySerialPort:SerialPort,INotifyPropertyChanged
     {
-        public string Loggin=string.Empty;
+        public string Loggin = string.Empty;
         public int State = 0;
 
         public string cost=string.Empty;
         public string account=string.Empty;
         public string pin=string.Empty;
 
-        public MySerialPort(string port):
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        public MySerialPort(string port) :
             base()
         {
             base.BaudRate = 9600;
@@ -25,11 +28,19 @@ namespace Domain.Arduino
             base.StopBits = StopBits.Two;
             base.Parity = Parity.None;
             base.ReadTimeout = 1000;
-
+            
             Loggin = "";
 
-            //   base.DataReceived += SerialPort_DataReceived;
+            //base.DataReceived += Do;
+            //DataReceived += Do;
+            
+            
             base.DataReceived += DataReceive;
+        }
+
+        private void MySerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -39,7 +50,7 @@ namespace Domain.Arduino
         /// <param name="e"></param>
         private void DataReceive(object sender, SerialDataReceivedEventArgs e)
         {
-            var port=(SerialPort)sender;
+            var port = (SerialPort)sender;
             int bufferSize = port.BytesToRead;
             string buffer = "";
             Loggin = Convert.ToString(bufferSize) + "/n";
@@ -51,26 +62,26 @@ namespace Domain.Arduino
 
             Loggin = buffer;
             ParseData();
-           // Loggin = "";
+            // Loggin = "";
         }
 
         public void ParseData()
         {
-            if ((State==1)&&(Loggin!= "Hello Arduino\r\n"))
+            if ((State == 1) && (Loggin != "Hello Arduino\r\n"))
             {
-                var data=Loggin.Split(' ').ToArray();
+                var data = Loggin.Split(' ').ToArray();
 
-                cost=data[0];
-                account=data[1]+" "+data[2]+" "+data[3]+ " "+data[4];
-                pin=data[5];
+                cost = data[0];
+                account = data[1] + " " + data[2] + " " + data[3] + " " + data[4];
+                pin = data[5];
 
             }
 
-            if (Loggin =="Hello Arduino\r\n")
+            if (Loggin == "Hello Arduino\r\n")
             {
                 State = 1;
                 Write("Ready");
-                
+
 
             }
 
@@ -115,7 +126,7 @@ namespace Domain.Arduino
                 base.Close();
             }
             base.PortName = port;
-            base.Open();
+          //  base.Open();
         }
     }
 }

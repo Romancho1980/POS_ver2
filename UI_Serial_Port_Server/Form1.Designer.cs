@@ -61,6 +61,13 @@
             label18 = new Label();
             label19 = new Label();
             label20 = new Label();
+            label21 = new Label();
+            label22 = new Label();
+            label23 = new Label();
+            label24 = new Label();
+            label25 = new Label();
+            label26 = new Label();
+            button9 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -122,6 +129,7 @@
             button3.TabIndex = 5;
             button3.Text = "Добавить";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -131,6 +139,7 @@
             button4.TabIndex = 6;
             button4.Text = "Удалить";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -140,6 +149,7 @@
             button5.TabIndex = 7;
             button5.Text = "Редактировать";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label3
             // 
@@ -301,6 +311,7 @@
             button6.TabIndex = 28;
             button6.Text = "Редактировать";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button7
             // 
@@ -319,6 +330,7 @@
             button8.TabIndex = 26;
             button8.Text = "Добавить";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // label17
             // 
@@ -356,11 +368,82 @@
             label20.TabIndex = 32;
             label20.Text = "Остаток на счёте";
             // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(368, 488);
+            label21.Name = "label21";
+            label21.Size = new Size(31, 15);
+            label21.TabIndex = 33;
+            label21.Text = "Cost";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(368, 512);
+            label22.Name = "label22";
+            label22.Size = new Size(39, 15);
+            label22.TabIndex = 34;
+            label22.Text = "#Card";
+            label22.Click += label22_Click;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(368, 538);
+            label23.Name = "label23";
+            label23.Size = new Size(26, 15);
+            label23.TabIndex = 35;
+            label23.Text = "PIN";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(415, 538);
+            label24.Name = "label24";
+            label24.Size = new Size(44, 15);
+            label24.TabIndex = 38;
+            label24.Text = "label24";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(415, 512);
+            label25.Name = "label25";
+            label25.Size = new Size(44, 15);
+            label25.TabIndex = 37;
+            label25.Text = "label25";
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(415, 488);
+            label26.Name = "label26";
+            label26.Size = new Size(44, 15);
+            label26.TabIndex = 36;
+            label26.Text = "label26";
+            // 
+            // button9
+            // 
+            button9.Location = new Point(477, 445);
+            button9.Name = "button9";
+            button9.Size = new Size(282, 32);
+            button9.TabIndex = 39;
+            button9.Text = "История транзакций";
+            button9.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1221, 703);
+            Controls.Add(button9);
+            Controls.Add(label24);
+            Controls.Add(label25);
+            Controls.Add(label26);
+            Controls.Add(label23);
+            Controls.Add(label22);
+            Controls.Add(label21);
             Controls.Add(label20);
             Controls.Add(label19);
             Controls.Add(label18);
@@ -434,5 +517,12 @@
         private Label label18;
         private Label label19;
         private Label label20;
+        private Label label21;
+        private Label label22;
+        private Label label23;
+        private Label label24;
+        private Label label25;
+        private Label label26;
+        private Button button9;
     }
 }

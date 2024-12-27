@@ -9,15 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Новая папка\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="System.IO.Ports" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <Folder Include="Domain\Context\" />
+    <Folder Include="Domain\Infrastructure\" />
   </ItemGroup>
 
 </Project>

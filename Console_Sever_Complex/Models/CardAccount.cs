@@ -9,7 +9,7 @@ namespace Console_Sever_Complex.Models
 {
     internal class CardAccount
     {
-        [Key]
+        public int Id { get; set; }
         public string Account { get; set; } = string.Empty;
         public string TypeAccount { get; set; } = string.Empty;
         public decimal Balance { get; set; }

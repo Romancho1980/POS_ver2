@@ -10,9 +10,9 @@ namespace Console_Sever_Complex.Models
 {
     internal class Client
     {
+        public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Surname { get; set; } = string.Empty;
-        [Key]
         public string INN { get; set; } = string.Empty;
         public string Passport { get; set; } = string.Empty;
         public DateTime BirthDay { get; set; }
