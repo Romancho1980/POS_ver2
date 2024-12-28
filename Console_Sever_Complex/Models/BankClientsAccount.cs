@@ -10,12 +10,12 @@ namespace Console_Sever_Complex.Models
 {
     internal class BankClientsAccount
     {
-        //public int Id { get; set; }
+        public int Id { get; set; }
 
-        [Key, Column(Order = 0)]
+      //  [Key, Column(Order = 0)]
         public Client ClientId { get; set; }
 
-        [Key, Column(Order = 1)]
+      //  [Key, Column(Order = 1)]
         public CardAccount AccountId { get; set; }
     }
 }

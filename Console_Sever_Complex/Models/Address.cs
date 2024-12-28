@@ -10,7 +10,7 @@ namespace Console_Sever_Complex.Models
     internal class Address
     {
         [Key]
-        public int RegionId {  get; set; }
+        public string RegionId {  get; set; }
         public string? Oblast { get; set; } = string.Empty;
         public string? Region { get; set; } = string.Empty;
         public string? City { get; set; } = string.Empty;

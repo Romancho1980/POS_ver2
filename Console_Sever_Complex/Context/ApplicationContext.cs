@@ -11,12 +11,19 @@ namespace Console_Sever_Complex.Context
     internal class ApplicationContext:DbContext
     {
         public DbSet<Address> adress => Set<Address>();
-   //     public DbSet<BankClientsAccount> bankClients => Set<BankClientsAccount>();
+        public DbSet<BankClientsAccount> bankClients => Set<BankClientsAccount>();
         public DbSet<CardAccount> cardAccount => Set<CardAccount>();
         public DbSet<Client> client => Set<Client>();
         public ApplicationContext()
         {
+            //Database.EnsureDeleted();
             Database.EnsureCreated();
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //modelBuilder.Entity<BankClientsAccount>()
+            //     .HasKey(s => new { s.AccountId, s.ClientId });
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
