@@ -1,8 +1,10 @@
 //using Domain.Arduino;
 //using Domain.Models.SimpleModels;
 //using Domain.Services;
+using Microsoft.EntityFrameworkCore;
 using System.IO.Ports;
 using UI_Serial_Port_Server.Domain.Arduino;
+using UI_Serial_Port_Server.Domain.Context;
 using UI_Serial_Port_Server.Domain.Models.SimpleModels;
 using UI_Serial_Port_Server.Domain.Services;
 using UI_Serial_Port_Server.Views;
@@ -13,7 +15,11 @@ namespace UI_Serial_Port_Server
 {
     public partial class Form1 : Form, INotify
     {
+        // Какая-то информация
         public MockDataBase dataBase;
+
+        public ApplicationDbContext dbContext;
+        public Database realdatabase;
         MySerialPort arduino;
         //        public ArduinoLogic arduinoLogic;
 
@@ -25,6 +31,10 @@ namespace UI_Serial_Port_Server
         {
             //arduinoLogic = new ArduinoLogic();
             dataBase = new MockDataBase();
+
+            dbContext = new ApplicationDbContext();
+            realdatabase=new Database(dbContext);
+
             // arduino = new UseSerial();
             arduino = new MySerialPort("COM3");
             arduino.Open("COM3");
@@ -37,9 +47,9 @@ namespace UI_Serial_Port_Server
             richTextBox1.Text += arduino.Loggin;
             //arduinoLogic.DataFromArduino = arduino.Loggin;
 
-            label26.Text = arduino.cost;
-            label25.Text = arduino.account;
-            label24.Text = arduino.pin;
+            //label26.Text = arduino.cost;
+            //label25.Text = arduino.account;
+            //label24.Text = arduino.pin;
 
         }
 
@@ -58,9 +68,13 @@ namespace UI_Serial_Port_Server
         {
             timer1.Start();
             listBox1.Items.Clear();
-            foreach (var items in dataBase.accounts)
+          //  var data=realdatabase.GetOnlyNameAndSurnameClients();
+            var data=realdatabase.GetAllClients();
+            //IEnumerable<ClientAccountVer1> data=realdatabase.GetAllClients();
+            foreach (var item in data)
             {
-                listBox1.Items.Add(items.Name + " " + items.Surname);
+            ////    listBox1.Items.Add(items.Name + " " + items.Surname);
+                listBox1.Items.Add(item.Name + " " + item.Surname);
             }
 
         }
@@ -79,13 +93,13 @@ namespace UI_Serial_Port_Server
             //label19.Text=SelectedClientAccount.Name;
             label20.Text = $"{SelectedClientAccount.Balance.ToString()} руб";
 
-            listBox2.Items.Clear();
-            listBox2.Items.Add(SelectedClientAccount.Account);
-            if (listBox2.Items.Count > 0) 
-            { 
-                SelectedAccount=listBox2.Items[0].ToString();  
-                listBox2.SelectedIndex = 0; 
-            }
+            //listBox2.Items.Clear();
+            //listBox2.Items.Add(SelectedClientAccount.Account);
+            //if (listBox2.Items.Count > 0) 
+            //{ 
+            //    SelectedAccount=listBox2.Items[0].ToString();  
+            //    listBox2.SelectedIndex = 0; 
+            //}
 
 
         }

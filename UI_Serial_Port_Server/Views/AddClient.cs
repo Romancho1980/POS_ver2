@@ -33,7 +33,7 @@ namespace UI_Serial_Port_Server.Views
             textBox3.Text = data.INN;
             textBox4.Text = data.Passport;
 
-            dateTimePicker1.Value = data.Birthday;
+            dateTimePicker1.Value = (DateTime)data.Birthday;
 
         }
 

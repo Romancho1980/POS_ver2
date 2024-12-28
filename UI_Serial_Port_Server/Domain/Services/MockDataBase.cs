@@ -27,7 +27,7 @@ namespace UI_Serial_Port_Server.Domain.Services
                 Passport = "54658744654",
                 Birthday = DateTime.Now,
                 Account = "2204 2567 5444 3144",
-                Balance = 1550M,
+                Balance = 1550,
                 Description = "No data ...."
 
             });
@@ -42,7 +42,7 @@ namespace UI_Serial_Port_Server.Domain.Services
                 Passport = "65647987984",
                 Birthday = DateTime.Now,
                 Account = "8999 3217 4773 1247",
-                Balance = 15.10M,
+                Balance = 15,
                 Description = "No data"
             });
 
@@ -56,7 +56,7 @@ namespace UI_Serial_Port_Server.Domain.Services
                 Passport = "12335577989",
                 Birthday = DateTime.Now,
                 Account = "9512 6547 1274 6571",
-                Balance = 45.51M,
+                Balance = 45,
                 Description = "No data"
             });
 
@@ -70,7 +70,7 @@ namespace UI_Serial_Port_Server.Domain.Services
                 Passport = "99844466612",
                 Birthday = DateTime.Now,
                 Account = "8794 5412 6598 3284",
-                Balance = 15505840M,
+                Balance = 1550584,
                 Description = "No data"
             });
 
@@ -84,7 +84,7 @@ namespace UI_Serial_Port_Server.Domain.Services
                 Passport = "66546547722",
                 Birthday = DateTime.Now,
                 Account = "2205 5848 6312 8951",
-                Balance = 10551.97M,
+                Balance = 10551,
                 Description = "No data"
             });
         }

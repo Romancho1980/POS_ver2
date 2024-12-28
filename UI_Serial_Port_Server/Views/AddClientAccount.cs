@@ -56,7 +56,7 @@ namespace UI_Serial_Port_Server.Views
         private void button1_Click(object sender, EventArgs e)
         {
             update.Account = textBox1.Text;
-            update.Balance = Decimal.Parse(textBox2.Text);
+            update.Balance = int.Parse(textBox2.Text);
             update.Description=richTextBox1.Text;
             Close();
         }

@@ -43,6 +43,7 @@ namespace Console_Sever_Complex
                 Account = cardAccounts
             };
 
+
             _dbContext.cardAccount.AddRange(cardAccounts);
             _dbContext.client.Add(client);
             try
